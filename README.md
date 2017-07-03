@@ -16,11 +16,10 @@ Tensorflow implementation of [Least Squares Generative Adversarial Networks by M
 
 
 ## Preparation
-1. Clone this repo, create `log/` and `ckpt/` folders:
+1. Clone this repo, create `ckpt/` folder:
    ```bash
    git clone https://github.com/markdtw/least-squares-gan.git
    cd least-squares-gan
-   mkdir log
    mkdir ckpt
    ```
 2. To train on LSUN, use the [provided tools](https://github.com/fyu/lsun) to download and extract. For example:
@@ -55,7 +54,20 @@ python main.py
 
 ## Some results
 
-![tbg]()
+Epoch 40:
+![ep-40](https://github.com/markdtw/least-squares-gan/blob/master/log/generated-ep-40.jpg)
+
+Epoch 80:
+![ep-80](https://github.com/markdtw/least-squares-gan/blob/master/log/generated-ep-80.jpg)
+
+Epoch 120:
+![ep-120](https://github.com/markdtw/least-squares-gan/blob/master/log/generated-ep-120.jpg)
+
+Generator loss:
+![g-loss](https://github.com/markdtw/least-squares-gan/blob/master/log/gloss.png)
+
+Discriminator loss:
+![d-loss](https://github.com/markdtw/least-squares-gan/blob/master/log/dloss.png)
 
 
 ## Notes

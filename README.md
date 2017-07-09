@@ -54,14 +54,16 @@ python main.py
 
 ## Some results
 
-Epoch 40:
-![ep-40](https://github.com/markdtw/least-squares-gan/blob/master/log/generated-ep-40.jpg)
+Epoch 10:
+![ep-10](https://github.com/markdtw/least-squares-gan/blob/master/log/generated-ep-10.jpg)
 
-Epoch 80:
-![ep-80](https://github.com/markdtw/least-squares-gan/blob/master/log/generated-ep-80.jpg)
+Epoch 25:
+![ep-25](https://github.com/markdtw/least-squares-gan/blob/master/log/generated-ep-25.jpg)
 
-Epoch 120:
-![ep-120](https://github.com/markdtw/least-squares-gan/blob/master/log/generated-ep-120.jpg)
+Epoch 45:
+![ep-45](https://github.com/markdtw/least-squares-gan/blob/master/log/generated-ep-45.jpg)
+
+Results from epoch 45 is already nice and crispy.
 
 Generator loss:
 ![g-loss](https://github.com/markdtw/least-squares-gan/blob/master/log/gloss.png)
@@ -71,8 +73,8 @@ Discriminator loss:
 
 
 ## Notes
-- The model will save 40 generated pictures in `log/` folder after every epoch.
-- model.py is simply DCGAN, but the output of D is not the fc layer as mentioned in the paper, instead I use the last conv2d similar to [this repo](https://github.com/cameronfabbri/LSGANs-Tensorflow), I can't train it with the fc layer as the output layer because either D or G will be too strong that makes the gradients vanish. Please let me know if you find the problem.
+- The model will save 40 generated pictures in `log/` folder every epoch.
+- Initialization is important! Default initialization with `tf.xavier_initializer` will lead to either D or G's gradient vanishing problem, instead I use `tf.truncated_normal_initializer` which is identical to DCGAN original implementation to solve the problem.
 - Issues are more than welcome!
 
 
